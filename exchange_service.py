@@ -92,8 +92,6 @@ def exchange(source_currency: str, target_currency: str, amount: float):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-
-# Uncomment the below lines to run locally (for testing in a local environment)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
