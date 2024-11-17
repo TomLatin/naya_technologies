@@ -59,8 +59,14 @@ def process_transactions(csv_file: str, output_file: str) -> None:
 
 
 if __name__ == "__main__":
-    # Replace with the actual path to your CSV file and desired output file
-    input_csv = "transaction2.csv"
-    output_json = "transactions_with_target_amount.json"
+    import argparse
 
-    process_transactions(input_csv, output_json)
+    # Argument parser for user inputs
+    parser = argparse.ArgumentParser(description="Process transactions and fetch exchange rates.")
+    parser.add_argument("input_csv", type=str, help="Path to the input CSV file.")
+    parser.add_argument("output_json", type=str, help="Path to save the output JSON file.")
+
+    args = parser.parse_args()
+
+    # Process transactions with user-provided paths
+    process_transactions(args.input_csv, args.output_json)
