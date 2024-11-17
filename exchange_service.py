@@ -58,11 +58,10 @@ class CurrencyConverter:
             # Step 1: Source to Intermediate
             rate_to_intermediate = self.rate_service.get_rate(source_currency, intermediate_currency)
             intermediate_amount = amount * rate_to_intermediate
-            intermediate_amount_with_commission = intermediate_amount * 1.01
 
             # Step 2: Intermediate to Target
             rate_to_target = self.rate_service.get_rate(intermediate_currency, target_currency)
-            final_amount = intermediate_amount_with_commission * rate_to_target
+            final_amount = intermediate_amount * rate_to_target
             return final_amount * 1.01  # Apply commission again
 
         # No valid conversion path
