@@ -19,6 +19,7 @@ This project consists of two main components:
 
 ## Running the ExchangeRateService API (`exchange_service.py`)
 
+--------------
 The `exchange_service.py` file starts a FastAPI application that provides a REST API for currency conversion.
 
 ### On Windows:
@@ -47,6 +48,8 @@ GET http://localhost:8000/exchange?source_currency=USD&target_currency=ILS&amoun
 ```
 
 ## Running the ETL Processor (etl_exchange.py)
+
+--------------
 The etl_exchange.py script processes transactions from a CSV file, calls the ExchangeRateService API to get the 
 converted amounts, and saves the results as a JSON file.
 
