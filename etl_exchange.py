@@ -29,7 +29,7 @@ def fetch_exchange_rate(row: pd.Series) -> Optional[float]:
         return data["converted_amount"]
     except requests.exceptions.RequestException as e:
         print(f"Error fetching exchange rate for {source_currency} to {target_currency}: {e}")
-        return
+        return None
 
 
 def process_transactions(csv_file: str, output_file: str) -> None:
@@ -60,7 +60,7 @@ def process_transactions(csv_file: str, output_file: str) -> None:
 
 if __name__ == "__main__":
     # Replace with the actual path to your CSV file and desired output file
-    input_csv = "transaction.csv"
+    input_csv = "transaction2.csv"
     output_json = "transactions_with_target_amount.json"
 
     process_transactions(input_csv, output_json)
